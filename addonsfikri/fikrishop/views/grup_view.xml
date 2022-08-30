@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="grup_view_tree" model="ir.ui.view">
+        <field name="name">grup_view_tree</field>
+        <field name="model">fikrishop.grup</field>
+        <field name="arch" type="xml">
+            <tree string="grup_tree">
+                <field name="kode_grup"/>
+                <field name="nama_grup"/>
+                <field name="produk_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="grup_view_form" model="ir.ui.view">
+        <field name="name">grup_view_form</field>
+        <field name="model">fikrishop.grup</field>
+        <field name="arch" type="xml">
+            <form string="grup_form">
+                <sheet>
+                    <group>
+                        <field name="kode_grup"/>
+                        <field name="nama_grup"/>
+                    </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="Produk">
+                            <field name="produk_ids">
+                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="nama_produk"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="grup_action" model="ir.actions.act_window">
+        <field name="name">Grup</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fikrishop.grup</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="grup_categ"
+            name="Grup"
+            parent="barang_root"
+            action="grup_action"
+            sequence="30"/>
+</odoo>

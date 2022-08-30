@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pemasok_view_tree" model="ir.ui.view">
+        <field name="name">pemasok_view_tree</field>
+        <field name="model">fikrishop.pemasok</field>
+        <field name="arch" type="xml">
+            <tree string="pemasok_tree">
+                <field name="kode_pemasok"/>
+                <field name="kode_pembelian_ids"/>
+                <field name="nama_pemasok"/>
+                <field name="alamat"/>
+                <field name="kota"/>
+                <field name="provinsi"/>
+                <field name="no_telepon"/>
+                <field name="no_fax"/>
+                <field name="contact_person"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pemasok_view_form" model="ir.ui.view">
+        <field name="name">pemasok_view_form</field>
+        <field name="model">fikrishop.pemasok</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <group>
+                        <field name="kode_pemasok"/>
+                        <field name="nama_pemasok"/>
+                        <field name="contact_person"/>
+                    </group>
+                    <group>
+                        <field name="alamat"/>
+                        <field name="kota"/>
+                        <field name="provinsi"/>
+                        <field name="no_telepon"/>
+                        <field name="no_fax"/>
+                    </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="Pembelian">
+                            <field name="kode_pembelian_ids">
+                                <tree string="Pembelian" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="kode_pemasok"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pemasok_action" model="ir.actions.act_window">
+        <field name="name">pemasok</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fikrishop.pemasok</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="pemasok_categ"
+              name="Pemasok"
+              parent="pembelian_root"
+              action="pemasok_action"
+              sequence="30"/>
+</odoo>

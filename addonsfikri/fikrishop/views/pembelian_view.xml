@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pembelian_view_tree" model="ir.ui.view">
+        <field name="name">pembelian_view_tree</field>
+        <field name="model">fikrishop.pembelian</field>
+        <field name="arch" type="xml">
+            <tree string="pembelian_tree">
+                <field name="tgl_masuk"/>
+                <field name="kode_pemasok"/>
+                <field name="total"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pembelian_view_form" model="ir.ui.view">
+        <field name="name">pembelian_view_form</field>
+        <field name="model">fikrishop.pembelian</field>
+        <field name="arch" type="xml">
+            <form string="pembelian_form">
+                <sheet>
+                    <group>
+                        <!-- <field name="no_masuk_ids"/> -->
+                        <field name="kode_pemasok"/>
+                        <field name="tgl_masuk"/>
+                        <field name="total"/>
+                        <field name="user_id"/>
+                    </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="No Nota Pembelian || Daftar Beli">
+                            <field name="no_masuk_ids">
+                            <tree editable='bottom'>
+                                <field name="kode_barang_ids"/>  
+                                <field name="nama_barang_pembelian"/> 
+                                <field name="harga_beli"/> 
+                                <field name="jumlah" sum="Jumlah" />   
+                                <field name="subtotal" sum="Totalsemua"/>                                     
+                            </tree>
+                            </field>                                                
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pembelian_action" model="ir.actions.act_window">
+        <field name="name">Pembelian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fikrishop.pembelian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="pembelian_categ"
+              name="pembelian"
+              parent="pembelian_root"
+              action="pembelian_action"
+              sequence="10"/>
+</odoo>

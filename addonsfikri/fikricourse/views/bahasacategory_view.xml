@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fikricourse_bahasacourse_view_tree" model="ir.ui.view">
+        <field name="name">Kursus Bahasa</field>
+        <field name="model">fikricourse.bahasa</field>
+        <field name="arch" type="xml">
+            <tree string="fikricourse_bahasacourse_tree">
+                <field name="name"/>
+                <field name="level_belajar"/>
+                <field name="biaya"/>
+                <field name="kapasitas_kelas"/>
+                <field name="jml_siswa_bahasa"/>
+                <field name="kapasitas_sisa"/>
+                <field name="negara_pendamping"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fikricourse_bahasacourse_view_form" model="ir.ui.view">
+        <field name="name">Kursus Bahasa</field>
+        <field name="model">fikricourse.bahasa</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="level_belajar"/>
+                        <field name="biaya"/>
+                        <field name="kapasitas_kelas"/>
+                        <field name="kapasitas_sisa"/>
+                        <field name="negara_pendamping"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fikricourse_bahasacourse_action" model="ir.actions.act_window">
+        <field name="name">Bahasa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fikricourse.bahasa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fikricourse_bahasacourse_categ"
+              name="Bahasa"
+              parent="fikricourse_kursus_categ"
+              action="fikricourse_bahasacourse_action"
+              sequence="20"/>
+</odoo>

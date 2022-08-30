@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fikricourse_sessionpemograman_view_tree" model="ir.ui.view">
+        <field name="name">fikricourse_sessionpemograman_view_tree</field>
+        <field name="model">fikricourse.sessionpemograman</field>
+        <field name="arch" type="xml">
+            <tree string="fikricourse_sessionpemograman_tree">
+                <field name="nama_kursus"/>
+                <field name="tgl_mulai"/>
+                <field name="nama_tutor"/>
+                <field name="jml_siswa"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fikricourse_sessionpemograman_view_form" model="ir.ui.view">
+        <field name="name">fikricourse_sessionpemograman_view_form</field>
+        <field name="model">fikricourse.sessionpemograman</field>
+        <field name="arch" type="xml">
+            <form string="fikricourse_sessionpemograman_form">
+                <sheet>
+                    <group>
+                        <field name="nama_kursus"/>
+                        <field name="tgl_mulai"/>
+                        <field name="nama_tutor"/>
+                        <field name="jml_siswa"/>
+                    </group>
+                    <notebook colspan='4'>
+                        <page name="peserta" string="Peserta">
+                            <field name="peserta_pemograman_ids">
+                                <tree editable="bottom">
+                                    <field name="peserta_ids"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fikricourse_sessionpemograman_action" model="ir.actions.act_window">
+        <field name="name">Session Pemograman</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fikricourse.sessionpemograman</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fikricourse_sessionpemograman_menu_action"
+              name="Session Pemograman"
+              parent="fikricourse_session"
+              action="fikricourse_sessionpemograman_action"
+              sequence="10"/>
+</odoo>

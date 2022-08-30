@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pelanggan_view_tree" model="ir.ui.view">
+        <field name="name">pelanggan_view_tree</field>
+        <field name="model">fikrishop.pelanggan</field>
+        <field name="arch" type="xml">
+            <tree string="pelanggan_tree">
+                <field name="kode_pelanggan"/>
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="no_telepon"/>
+            </tree>
+        </field>
+    </record>
+    <record id="pelanggan_view_form" model="ir.ui.view">
+        <field name="name">pelanggan_view_form</field>
+        <field name="model">fikrishop.pelanggan</field>
+        <field name="arch" type="xml">
+            <form string="pelanggan_form">
+                <sheet>
+                    <group>
+                        <field name="kode_pelanggan"/>
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="no_telepon"/>
+                    </group>
+                    <notebook colspan='8'>
+                        <page name="name" string="Penjualan">
+                            <field name="pelanggan">
+                                <tree string="Penjualan" create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="pelanggan_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+   <record id="pelanggan_action" model="ir.actions.act_window">
+       <field name="name">Pelanggan</field>
+       <field name="type">ir.actions.act_window</field>
+       <field name="res_model">fikrishop.pelanggan</field>
+       <field name="view_mode">tree,form</field>
+   </record>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="pelanggan_menu_categ"
+              name="Pelanggan"
+              parent="fikrishop_root"
+              action="pelanggan_action"
+              sequence="10"/>
+</odoo>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fikrishop_barang,access.fikrishop.barang,model_fikrishop_barang,,1,1,1,1
+access_fikrishop_grup,access.fikrishop.grup,model_fikrishop_grup,,1,1,1,1
+access_fikrishop_pelanggan,access.fikrishop.pelanggan,model_fikrishop_pelanggan,,1,1,1,1
+access_fikrishop_pemasok,access.fikrishop.pemasok,model_fikrishop_pemasok,,1,1,1,1
+access_fikrishop_pembeliandetail,access.fikrishop.pembeliandetail,model_fikrishop_pembeliandetail,,1,1,1,1
+access_fikrishop_pembelian,access.fikrishop.pembelian,model_fikrishop_pembelian,,1,1,1,1
+access_fikrishop_pengguna,access.fikrishop.pengguna,model_fikrishop_pengguna,,1,1,1,1
+access_fikrishop_penjualandetail,access.fikrishop.penjualandetail,model_fikrishop_penjualandetail,,1,1,1,1
+access_fikrishop_penjualan,access.fikrishop.penjualan,model_fikrishop_penjualan,,1,1,1,1
+access_fikrishop_produk,access.fikrishop.produk,model_fikrishop_produk,,1,1,1,1
+access_fikrishop_manusia,access.fikrishop.manusia,model_fikrishop_manusia,,1,1,1,1

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fikricourse_coursecategory,access.fikricourse.coursecategory,model_fikricourse_coursecategory,,1,1,1,1
+access_fikricourse_levelcategory,access.fikricourse.levelcategory,model_fikricourse_levelcategory,,1,1,1,1
+access_fikricourse_pemograman,access.fikricourse.pemograman,model_fikricourse_pemograman,,1,1,1,1
+access_fikricourse_bahasa,access.fikricourse.bahasa,model_fikricourse_bahasa,,1,1,1,1
+access_fikricourse_keterampilan,access.fikricourse.keterampilan,model_fikricourse_keterampilan,,1,1,1,1
+access_fikricourse_sessionpemograman,access.fikricourse.sessionpemograman,model_fikricourse_sessionpemograman,,1,1,1,1
+access_fikricourse_sessionbahasa,access.fikricourse.sessionbahasa,model_fikricourse_sessionbahasa,,1,1,1,1
+access_fikricourse_sessionketerampilan,access.fikricourse.sessionketerampilan,model_fikricourse_sessionketerampilan,,1,1,1,1
+access_fikricourse_pesertapemograman,access.fikricourse.pesertapemograman,model_fikricourse_pesertapemograman,,1,1,1,1
+access_fikricourse_pesertabahasa,access.fikricourse.pesertabahasa,model_fikricourse_pesertabahasa,,1,1,1,1
+access_fikricourse_pesertaketerampilan,access.fikricourse.pesertaketerampilan,model_fikricourse_pesertaketerampilan,,1,1,1,1
+
