@@ -44,5 +44,5 @@
               name="Pengguna"
               parent="fikrishop_root"
               action="pengguna_action"
-              sequence="50"/>
+              sequence="45"/>
 </odoo>

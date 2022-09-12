@@ -33,9 +33,8 @@
                         <field name="id_member" attrs="{'invisible': [('membership','=',False)]}" />
                         <field name="gender"/>
                     </group>
-                    <notebook colspan='8'>
-                        <page name="name" string="Barang">
-                            <field name="detailpenjualan_ids">
+                    <group name="daftarbarang" string="Daftar Barang">
+                        <field name="detailpenjualan_ids">
                             <tree editable='bottom'>
                                 <field name="barang_id"/>  
                                 <field name="satuan"/>
@@ -43,9 +42,8 @@
                                 <field name="jumlah" />   
                                 <field name="subtotal" sum ="Total"/>                                     
                             </tree>
-                            </field>                                                
-                        </page>
-                    </notebook>
+                        </field>                                                
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -60,7 +58,7 @@
     <!-- This Menu Item Must have a parent -->
     <menuitem id="penjualan_categ"
               name="Penjualan"
-              parent="penjualan_root"
+              parent="jualbeli_root"
               action="penjualan_action"
               sequence="10"/>
 </odoo>

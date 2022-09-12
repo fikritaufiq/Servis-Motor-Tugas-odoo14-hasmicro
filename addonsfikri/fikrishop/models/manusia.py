@@ -6,7 +6,7 @@ class manusia(models.Model):
     _description = 'Description'
 
     name = fields.Char(
-        string='kode Nama', 
+        string='Nama', 
         required='True')
     
     gender = fields.Selection([('male', 'Male'),
@@ -15,3 +15,7 @@ class manusia(models.Model):
                 required='True')
 
     alamat = fields.Char(string='Alamat')
+
+    no_telepon = fields.Char(               #np_tlpn
+        string='No telepon',                #np_tlpn
+        required=False)

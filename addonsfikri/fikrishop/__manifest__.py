@@ -21,22 +21,28 @@
     'application': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'product', 'report_xlsx'],
 
     # always loaded
    'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/menu.xml',
         'views/pengguna_view.xml',
         'views/pelanggan_view.xml',
         'views/penjualan_view.xml',
+        'views/manusia_view.xml',
         'views/barang_view.xml',
         'views/produk_view.xml',
         'views/grup_view.xml',
         'views/pemasok_view.xml',
         'views/pembelian_view.xml',
+        'views/manager_view.xml',
+        'views/kasir_view.xml',
+        'views/menu.xml',
+        'report/report.xml',
+        'report/penjualanpdf.xml',
+        'wizzard/barangdatang_wizzard_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

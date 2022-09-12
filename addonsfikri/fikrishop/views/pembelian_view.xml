@@ -5,8 +5,9 @@
         <field name="model">fikrishop.pembelian</field>
         <field name="arch" type="xml">
             <tree string="pembelian_tree">
-                <field name="tgl_masuk"/>
+                <field name="name"/>
                 <field name="kode_pemasok"/>
+                <field name="tgl_nota"/>
                 <field name="total"/>
                 <field name="user_id"/>
             </tree>
@@ -20,21 +21,21 @@
             <form string="pembelian_form">
                 <sheet>
                     <group>
-                        <!-- <field name="no_masuk_ids"/> -->
+                        <field name="name"/>
                         <field name="kode_pemasok"/>
-                        <field name="tgl_masuk"/>
+                        <field name="tgl_nota"/>
                         <field name="total"/>
                         <field name="user_id"/>
                     </group>
                     <notebook colspan='8'>
-                        <page name="name" string="No Nota Pembelian || Daftar Beli">
-                            <field name="no_masuk_ids">
+                        <page name="name" string="Barang">
+                            <field name="detailpembelian_ids">
                             <tree editable='bottom'>
-                                <field name="kode_barang_ids"/>  
-                                <field name="nama_barang_pembelian"/> 
-                                <field name="harga_beli"/> 
-                                <field name="jumlah" sum="Jumlah" />   
-                                <field name="subtotal" sum="Totalsemua"/>                                     
+                                <field name="barang_id"/>  
+                                <field name="satuan"/>
+                                <field name="harga_satuan"/> 
+                                <field name="jumlah" />   
+                                <field name="subtotal" sum ="Total"/>                                    
                             </tree>
                             </field>                                                
                         </page>
@@ -53,7 +54,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pembelian_categ"
               name="pembelian"
-              parent="pembelian_root"
+              parent="jualbeli_root"
               action="pembelian_action"
-              sequence="10"/>
+              sequence="20"/>
 </odoo>

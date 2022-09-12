@@ -22,7 +22,7 @@ class pengguna(models.Model):
     nama = fields.Char(
         string='Nama',
         required=False)
-        
+    
     level = fields.Integer(
         string='Level',
         required=False)

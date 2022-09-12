@@ -5,23 +5,18 @@ class barang(models.Model):
     _name = 'fikrishop.barang'
     _description = 'Description'
 
-    
-    kode_barang = fields.Char(
-        string='Kode_Barang',
-        required=False)
+    name = fields.Char(
+        string='Nama_Barang')
 
-    kode_produk = fields.Many2one(
+    kode_spec = fields.Char(
+        string='Kode Spec')
+
+    kode_barang = fields.Char(
+        string='Kode Barang')
+    
+    produk_id = fields.Many2one(
         comodel_name='fikrishop.produk',
         string='Kode_Produk',
-        required=False)
-
-    keterangan_produk = fields.Char(
-        string='Nama Produk',
-        compute="_compute_produk",
-        required=False)
-
-    name = fields.Char(
-        string='Nama_Barang',
         required=False)
 
     satuan = fields.Selection(
@@ -42,13 +37,10 @@ class barang(models.Model):
     stok = fields.Integer(
         string='Stok',
         required=False)
+    
+    jenis = fields.Selection(string='jenis', selection=[('makanan', 'Makanan'), ('minuman', 'Minuman')])
+    supplier_ids = fields.Many2many(comodel_name='fikrishop.pemasok', string='Daftar Supplier')
 
-
-
-    @api.depends('kode_produk')
-    def _compute_produk(self):
-           for a in self:
-            a.keterangan_produk = a.kode_produk.nama_produk
-
-
-
+    @api.onchange('produk_id', 'kode_spec')
+    def _onchange_produk(self):
+        self.kode_barang = str(self.produk_id.kode_produk)+' '+str(self.kode_spec)

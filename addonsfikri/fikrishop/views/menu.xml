@@ -5,26 +5,25 @@
               name="Fikritel"
               sequence="10"/>
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="pelanggan_root"
-              name="Pelanggan"
+    <menuitem id="hubunganbisnis_root"
+              name="Hubungan"
               parent="fikrishop_root"
               sequence="10"/>
-    <menuitem id="penjualan_root"
-              name="Penjualan"
+    <menuitem id="jualbeli_root"
+              name="Jual-Beli"
               parent="fikrishop_root"
               sequence="20"/>
-    <menuitem id="pembelian_root"
-              name="Pembelian"
-              parent="fikrishop_root"
-              sequence="30"/>
     <menuitem id="barang_root"
               name="Persediaan"
               parent="fikrishop_root"
-              sequence="40"/>
+              sequence="30"/>
     <menuitem id="pengguna_root"
               name="Pengguna"
               parent="fikrishop_root"
-              sequence="50"/>
-
+              sequence="40"/>
+    <menuitem id="pegawai_root"
+              name="Pegawai"
+              parent="fikrishop_root"
+              sequence="45"/>
 
 </odoo>

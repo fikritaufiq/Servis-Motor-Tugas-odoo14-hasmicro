@@ -1,21 +1,29 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http, models, fields
+from odoo.http import request
+import json
 
-
-# class Fikrishop(http.Controller):
-#     @http.route('/fikrishop/fikrishop/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/fikrishop/fikrishop/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('fikrishop.listing', {
-#             'root': '/fikrishop/fikrishop',
-#             'objects': http.request.env['fikrishop.fikrishop'].search([]),
-#         })
-
-#     @http.route('/fikrishop/fikrishop/objects/<model("fikrishop.fikrishop"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('fikrishop.object', {
-#             'object': obj
-#         })
+class Fikrishop(http.Controller):
+    @http.route('/fikrishop/getbarang', auth='public', method=['GET'])
+    def getBarang(self, **kw):
+        barang = self.env['fikrishop.barang'].search([])
+        isi = []
+        for b in barang:
+            isi.append({
+                'nama_barang' : b.name,
+                'hrg_jual' : b.hrg_jual,
+                'stok' : b.stok
+            })
+        return json.dumps(isi)
+    
+    @http.route('/fikrishop/getpemasok', auth='public', method=['GET'])
+    def getPemasok(self, **kw):
+        pemasok = request.env['fikrishop.produk'].search([])
+        pem = []
+        for p in pemasok:
+            pem.append({
+                'nama_perusahaan' : p.name,
+                'alamat' : p.alamat,
+                'no_telepon' : p.no_pic,
+                'barang' : p.barang_id[0].name
+            })
+        return json.dumps(pem)

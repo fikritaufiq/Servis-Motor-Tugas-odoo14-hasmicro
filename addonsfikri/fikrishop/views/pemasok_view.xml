@@ -4,16 +4,12 @@
         <field name="name">pemasok_view_tree</field>
         <field name="model">fikrishop.pemasok</field>
         <field name="arch" type="xml">
-            <tree string="pemasok_tree">
-                <field name="kode_pemasok"/>
-                <field name="kode_pembelian_ids"/>
-                <field name="nama_pemasok"/>
+            <tree>
+                <field name="name"/>
                 <field name="alamat"/>
-                <field name="kota"/>
-                <field name="provinsi"/>
-                <field name="no_telepon"/>
-                <field name="no_fax"/>
-                <field name="contact_person"/>
+                <field name="pic"/>
+                <field name="no_pic"/>
+                <field name="barang_ids"/>
             </tree>
         </field>
     </record>
@@ -22,29 +18,17 @@
         <field name="name">pemasok_view_form</field>
         <field name="model">fikrishop.pemasok</field>
         <field name="arch" type="xml">
-            <form string="_form">
+            <form string="Supplier">
                 <sheet>
                     <group>
-                        <field name="kode_pemasok"/>
-                        <field name="nama_pemasok"/>
-                        <field name="contact_person"/>
-                    </group>
-                    <group>
+                        <field name="name"/>
                         <field name="alamat"/>
-                        <field name="kota"/>
-                        <field name="provinsi"/>
-                        <field name="no_telepon"/>
-                        <field name="no_fax"/>
+                        <field name="pic"/>
+                        <field name="no_pic"/>
                     </group>
-                    <notebook colspan='8'>
-                        <page name="name" string="Pembelian">
-                            <field name="kode_pembelian_ids">
-                                <tree string="Pembelian" create="true" delete="true" edit="true" editable="bottom">
-                                    <field name="kode_pemasok"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
+                    <group name="daftar_barang" string="Daftar Barang">
+                        <field name="barang_ids"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -59,7 +43,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="pemasok_categ"
               name="Pemasok"
-              parent="pembelian_root"
+              parent="hubunganbisnis_root"
               action="pemasok_action"
-              sequence="30"/>
+              sequence="20"/>
 </odoo>

@@ -10,5 +10,6 @@ from . import penjualan
 from . import barang
 from . import pembelian
 from . import pengguna
-#from . import penjualandetail
-from . import pembeliandetail
+from . import kasir
+from . import manager
+#from . import pembeliandetail

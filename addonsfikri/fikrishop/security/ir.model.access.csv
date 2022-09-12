@@ -10,3 +10,5 @@ access_fikrishop_penjualandetail,access.fikrishop.penjualandetail,model_fikrisho
 access_fikrishop_penjualan,access.fikrishop.penjualan,model_fikrishop_penjualan,,1,1,1,1
 access_fikrishop_produk,access.fikrishop.produk,model_fikrishop_produk,,1,1,1,1
 access_fikrishop_manusia,access.fikrishop.manusia,model_fikrishop_manusia,,1,1,1,1
+access_fikrishop_kasir,access.fikrishop.kasir,model_fikrishop_kasir,,1,1,1,1
+access_fikrishop_barangdatang,access.fikrishop.barangdatang,model_fikrishop_barangdatang,,1,1,1,1

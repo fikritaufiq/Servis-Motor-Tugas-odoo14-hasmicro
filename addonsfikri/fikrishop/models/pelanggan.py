@@ -6,23 +6,9 @@ class pelanggan(models.Model):
     _inherit = 'fikrishop.manusia'
     _description = 'Description'
 
-    name = fields.Char(string='nama pelanggan')
-    kode_pelanggan = fields.Char(
-        string='Kode_pelanggan', 
+    nama_pelanggan = fields.Char(string='ID Member')
+    id_member = fields.Char(
+        string='Kode Pelanggan', 
         required=False)
-
-    pelanggan = fields.One2many(            #pelanggan_ids
-        comodel_name='fikrishop.penjualan',
-        inverse_name='pelanggan_id',
-        string='Kode_Ids',
-        required=False)
-
-    alamat = fields.Char(
-        string='Alamat',
-        required=False)
-
-    no_telepon = fields.Char(               #np_tlpn
-        string='No telepon',                #np_tlpn
-        required=False)
-
+    level = fields.Char(string='Level')
     

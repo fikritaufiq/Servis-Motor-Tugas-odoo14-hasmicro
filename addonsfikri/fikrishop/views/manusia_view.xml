@@ -1,14 +1,16 @@
-<!--<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="manusia_view_tree" model="ir.ui.view">
         <field name="name">_manusiav_iew_tree</field>
         <field name="model">fikrishop.manusia</field>
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <tree string="_tree">
                 <field name="gender"/>
                 <field name="name"/>
                 <field name="alamat"/>
+                <field name="no_telepon"/>
             </tree>
         </field>
     </record>
@@ -16,6 +18,7 @@
     <record id="manusia_view_form" model="ir.ui.view">
         <field name="name">manusia_view_form</field>
         <field name="model">fikrishop.manusia</field>
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <form string="manusia_form">
                 <sheet>
@@ -23,6 +26,7 @@
                         <field name="gender"/>
                         <field name="name"/>
                         <field name="alamat"/>
+                        <field name="no_telepon"/>
                     </group>
                 </sheet>
             </form>
@@ -41,4 +45,4 @@
               parent="fikrishop_root"
               action="manusia_action"
               sequence="60"/>
-</odoo> -->
+</odoo>

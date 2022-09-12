@@ -5,9 +5,8 @@
         <field name="model">fikrishop.grup</field>
         <field name="arch" type="xml">
             <tree string="grup_tree">
+                <field name="name"/>
                 <field name="kode_grup"/>
-                <field name="nama_grup"/>
-                <field name="produk_ids"/>
             </tree>
         </field>
     </record>
@@ -19,14 +18,15 @@
             <form string="grup_form">
                 <sheet>
                     <group>
-                        <field name="kode_grup"/>
-                        <field name="nama_grup"/>
+                        <field name="name"/>
+                        <field name="kode_grup"/>    
                     </group>
-                    <notebook colspan='8'>
-                        <page name="name" string="Produk">
+                    <notebook colspan='4'>
+                        <page name="produk" string="Produk">
                             <field name="produk_ids">
-                                <tree string="Grup" create="true" delete="true" edit="true" editable="bottom">
-                                    <field name="nama_produk"/>
+                                <tree editable='bottom'>
+                                    <field name="pelanggan_id"/>
+                                    <field name="name"/>
                                 </tree>
                             </field>
                         </page>
